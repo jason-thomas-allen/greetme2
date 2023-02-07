@@ -19,6 +19,10 @@
 		A967766F299204670025D0C3 /* GreetMeFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9677668299204660025D0C3 /* GreetMeFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9677678299205050025D0C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967763B299204110025D0C3 /* ContentView.swift */; };
 		A9677682299208230025D0C3 /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = A9677681299208230025D0C3 /* Mockingbird */; };
+		A96776A1299228FE0025D0C3 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967769F299228FE0025D0C3 /* HomePage.swift */; };
+		A96776A2299228FE0025D0C3 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96776A0299228FE0025D0C3 /* LoginPage.swift */; };
+		A96776A529922AF90025D0C3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96776A329922AF90025D0C3 /* HomeView.swift */; };
+		A96776A629922AF90025D0C3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96776A429922AF90025D0C3 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		A9677656299204130025D0C3 /* GreetMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9677668299204660025D0C3 /* GreetMeFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GreetMeFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A967766A299204670025D0C3 /* GreetMeFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreetMeFramework.h; sourceTree = "<group>"; };
+		A967769F299228FE0025D0C3 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		A96776A0299228FE0025D0C3 /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		A96776A329922AF90025D0C3 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A96776A429922AF90025D0C3 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +176,7 @@
 		A9677653299204130025D0C3 /* GreetMeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A967769E299228FE0025D0C3 /* Page Objects */,
 				A9677654299204130025D0C3 /* GreetMeUITests.swift */,
 				A9677656299204130025D0C3 /* GreetMeUITestsLaunchTests.swift */,
 			);
@@ -210,9 +219,20 @@
 		A9677677299204A00025D0C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A96776A329922AF90025D0C3 /* HomeView.swift */,
+				A96776A429922AF90025D0C3 /* LoginView.swift */,
 				A967763B299204110025D0C3 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A967769E299228FE0025D0C3 /* Page Objects */ = {
+			isa = PBXGroup;
+			children = (
+				A967769F299228FE0025D0C3 /* HomePage.swift */,
+				A96776A0299228FE0025D0C3 /* LoginPage.swift */,
+			);
+			path = "Page Objects";
 			sourceTree = "<group>";
 		};
 		E6C22A7B8EA48C672192FE18 /* Generated Mocks */ = {
@@ -439,7 +459,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96776A2299228FE0025D0C3 /* LoginPage.swift in Sources */,
 				A9677657299204130025D0C3 /* GreetMeUITestsLaunchTests.swift in Sources */,
+				A96776A1299228FE0025D0C3 /* HomePage.swift in Sources */,
 				A9677655299204130025D0C3 /* GreetMeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,7 +470,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96776A629922AF90025D0C3 /* LoginView.swift in Sources */,
 				A9677678299205050025D0C3 /* ContentView.swift in Sources */,
+				A96776A529922AF90025D0C3 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
