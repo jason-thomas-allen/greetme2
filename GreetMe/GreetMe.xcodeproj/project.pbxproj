@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3E2CDABA44CFCBB6A6FA3C /* GreetMeTests-GreetMeFrameworkMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C4C3A826C8A32EF570A245 /* GreetMeTests-GreetMeFrameworkMocks.generated.swift */; };
 		A967763A299204110025D0C3 /* GreetMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9677639299204110025D0C3 /* GreetMeApp.swift */; };
 		A967763E299204130025D0C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A967763D299204130025D0C3 /* Assets.xcassets */; };
 		A9677641299204130025D0C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9677640299204130025D0C3 /* Preview Assets.xcassets */; };
@@ -42,6 +43,13 @@
 			remoteGlobalIDString = A9677667299204660025D0C3;
 			remoteInfo = GreetMeFramework;
 		};
+		A967768A29920B140025D0C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A967762E299204110025D0C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9677635299204110025D0C3;
+			remoteInfo = GreetMe;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		76C4C3A826C8A32EF570A245 /* GreetMeTests-GreetMeFrameworkMocks.generated.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "GreetMeTests-GreetMeFrameworkMocks.generated.swift"; path = "MockingbirdMocks/GreetMeTests-GreetMeFrameworkMocks.generated.swift"; sourceTree = "<group>"; };
 		A9677636299204110025D0C3 /* GreetMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreetMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9677639299204110025D0C3 /* GreetMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetMeApp.swift; sourceTree = "<group>"; };
 		A967763B299204110025D0C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +124,7 @@
 				A9677649299204130025D0C3 /* GreetMeTests */,
 				A9677653299204130025D0C3 /* GreetMeUITests */,
 				A9677637299204110025D0C3 /* Products */,
+				E6C22A7B8EA48C672192FE18 /* Generated Mocks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +215,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E6C22A7B8EA48C672192FE18 /* Generated Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				76C4C3A826C8A32EF570A245 /* GreetMeTests-GreetMeFrameworkMocks.generated.swift */,
+			);
+			name = "Generated Mocks";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -242,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A967765D299204130025D0C3 /* Build configuration list for PBXNativeTarget "GreetMeTests" */;
 			buildPhases = (
+				B37DAB4FFC79604CEA1149B8 /* Generate Mockingbird Mocks */,
 				A9677642299204130025D0C3 /* Sources */,
 				A9677643299204130025D0C3 /* Frameworks */,
 				A9677644299204130025D0C3 /* Resources */,
@@ -250,6 +269,7 @@
 			);
 			dependencies = (
 				A967767F299207E10025D0C3 /* PBXTargetDependency */,
+				A967768B29920B140025D0C3 /* PBXTargetDependency */,
 			);
 			name = GreetMeTests;
 			packageProductDependencies = (
@@ -310,6 +330,7 @@
 					};
 					A9677645299204130025D0C3 = {
 						CreatedOnToolsVersion = 14.2;
+						TestTargetID = A9677635299204110025D0C3;
 					};
 					A967764F299204130025D0C3 = {
 						CreatedOnToolsVersion = 14.2;
@@ -377,6 +398,25 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B37DAB4FFC79604CEA1149B8 /* Generate Mockingbird Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Mockingbird Mocks";
+			outputPaths = (
+				"$(SRCROOT)/MockingbirdMocks/GreetMeTests-GreetMeFrameworkMocks.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n\n# Prevent Xcode 13 from running this script while indexing.\n[[ \"${ACTION}\" == \"indexbuild\" ]] && exit 0\n\n# Infer the derived data location from the build environment.\n[[ -z \"${DERIVED_DATA+x}\" ]] && DERIVED_DATA=\"$(echo \"${BUILD_ROOT}\" | sed -n 's|\\(.*\\)/Build/.*|\\1|p')\"\n\n\"${DERIVED_DATA}/SourcePackages/checkouts/mockingbird/mockingbird\" generate --targets \"GreetMeFramework\" --outputs \"${SRCROOT}/MockingbirdMocks/GreetMeTests-GreetMeFrameworkMocks.generated.swift\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9677632299204110025D0C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -391,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A967764B299204130025D0C3 /* GreetMeTests.swift in Sources */,
+				3C3E2CDABA44CFCBB6A6FA3C /* GreetMeTests-GreetMeFrameworkMocks.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +469,11 @@
 			isa = PBXTargetDependency;
 			target = A9677667299204660025D0C3 /* GreetMeFramework */;
 			targetProxy = A967767E299207E10025D0C3 /* PBXContainerItemProxy */;
+		};
+		A967768B29920B140025D0C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9677635299204110025D0C3 /* GreetMe */;
+			targetProxy = A967768A29920B140025D0C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -621,6 +667,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreetMe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreetMe";
 			};
 			name = Debug;
 		};
@@ -639,6 +686,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreetMe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreetMe";
 			};
 			name = Release;
 		};
