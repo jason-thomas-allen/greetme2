@@ -9,5 +9,9 @@ import Foundation
 import XCTest
 
 class HomePage {
+    private var app: XCUIApplication
     
+    init(app: XCUIApplication) {
+        self.app = app
+    }
 }
