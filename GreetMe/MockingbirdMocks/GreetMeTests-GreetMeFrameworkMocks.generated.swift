@@ -12,48 +12,5 @@ import Foundation
 import Swift
 import SwiftUI
 
-private let mkbGenericStaticMockContext = Mockingbird.GenericStaticMockContext()
-
-// MARK: - Mocked AuthService
-public final class AuthServiceMock: GreetMeFramework.AuthService, Mockingbird.Mock {
-  typealias MockingbirdSupertype = GreetMeFramework.AuthService
-  public static let mockingbirdContext = Mockingbird.Context()
-  public let mockingbirdContext = Mockingbird.Context(["generator_version": "0.20.0", "module_name": "GreetMeFramework"])
-
-  fileprivate init(sourceLocation: Mockingbird.SourceLocation) {
-    self.mockingbirdContext.sourceLocation = sourceLocation
-    AuthServiceMock.mockingbirdContext.sourceLocation = sourceLocation
-  }
-
-  // MARK: Mocked `loginAsync`(`username`: String, `password`: String)
-  public func `loginAsync`(`username`: String, `password`: String) async throws -> Void {
-    return try await self.mockingbirdContext.mocking.didInvoke(Mockingbird.SwiftInvocation(selectorName: "`loginAsync`(`username`: String, `password`: String) async throws -> Void", selectorType: Mockingbird.SelectorType.method, arguments: [Mockingbird.ArgumentMatcher(`username`), Mockingbird.ArgumentMatcher(`password`)], returnType: Swift.ObjectIdentifier((Void).self))) {
-      self.mockingbirdContext.recordInvocation($0)
-      let mkbImpl = self.mockingbirdContext.stubbing.implementation(for: $0)
-      if let mkbImpl = mkbImpl as? (String, String) async throws -> Void { return try await mkbImpl(`username`, `password`) }
-      if let mkbImpl = mkbImpl as? () async throws -> Void { return try await mkbImpl() }
-      for mkbTargetBox in self.mockingbirdContext.proxy.targets(for: $0) {
-        switch mkbTargetBox.target {
-        case .super:
-          break
-        case .object(let mkbObject):
-          guard var mkbObject = mkbObject as? MockingbirdSupertype else { break }
-          let mkbValue: Void = try await mkbObject.`loginAsync`(username: `username`, password: `password`)
-          self.mockingbirdContext.proxy.updateTarget(&mkbObject, in: mkbTargetBox)
-          return mkbValue
-        }
-      }
-      if let mkbValue = self.mockingbirdContext.stubbing.defaultValueProvider.value.provideValue(for: (Void).self) { return mkbValue }
-      self.mockingbirdContext.stubbing.failTest(for: $0, at: self.mockingbirdContext.sourceLocation)
-    }
-  }
-
-  public func `loginAsync`(`username`: @autoclosure () -> String, `password`: @autoclosure () -> String) async -> Mockingbird.Mockable<Mockingbird.ThrowingAsyncFunctionDeclaration, (String, String) async throws -> Void, Void> {
-    return Mockingbird.Mockable<Mockingbird.ThrowingAsyncFunctionDeclaration, (String, String) async throws -> Void, Void>(context: self.mockingbirdContext, invocation: Mockingbird.SwiftInvocation(selectorName: "`loginAsync`(`username`: String, `password`: String) async throws -> Void", selectorType: Mockingbird.SelectorType.method, arguments: [Mockingbird.resolve(`username`), Mockingbird.resolve(`password`)], returnType: Swift.ObjectIdentifier((Void).self)))
-  }
-}
-
-/// Returns a concrete mock of `AuthService`.
-public func mock(_ type: GreetMeFramework.AuthService.Protocol, file: StaticString = #file, line: UInt = #line) -> AuthServiceMock {
-  return AuthServiceMock(sourceLocation: Mockingbird.SourceLocation(file, line))
-}
+// No mockable types in 'GreetMeFramework'. Check that the module's source files have classes or
+// protocols that are not private and not marked as final.
