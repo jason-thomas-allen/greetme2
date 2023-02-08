@@ -142,6 +142,7 @@
 		A9677638299204110025D0C3 /* GreetMe */ = {
 			isa = PBXGroup;
 			children = (
+				A9A154E12993AC1500AE9F4C /* Stub Services */,
 				A9677639299204110025D0C3 /* GreetMeApp.swift */,
 				A967763D299204130025D0C3 /* Assets.xcassets */,
 				A967763F299204130025D0C3 /* Preview Content */,
@@ -213,6 +214,13 @@
 				A967763B299204110025D0C3 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A9A154E12993AC1500AE9F4C /* Stub Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Stub Services";
 			sourceTree = "<group>";
 		};
 		E6C22A7B8EA48C672192FE18 /* Generated Mocks */ = {

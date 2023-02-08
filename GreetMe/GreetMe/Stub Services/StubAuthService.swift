@@ -9,7 +9,7 @@ import Foundation
 import GreetMeFramework
 
 class StubAuthService: AuthService {
-    func loginAsync(userName: String, password: String) async throws {
+    func login(userName: String, password: String) throws {
         
     }
 }

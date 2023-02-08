@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol AuthService {
-    func loginAsync(userName: String, password: String) async throws -> Void
+    func login(userName: String, password: String) throws -> Void
 }

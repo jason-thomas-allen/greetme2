@@ -11,7 +11,7 @@ public class WebAuthService: AuthService {
     
     public init() {}
     
-    public func loginAsync(userName: String, password: String) async throws {
+    public func login(userName: String, password: String) throws {
         // TODO
     }
 }
