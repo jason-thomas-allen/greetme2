@@ -19,6 +19,14 @@
 		A967766F299204670025D0C3 /* GreetMeFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9677668299204660025D0C3 /* GreetMeFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9677678299205050025D0C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967763B299204110025D0C3 /* ContentView.swift */; };
 		A9677682299208230025D0C3 /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = A9677681299208230025D0C3 /* Mockingbird */; };
+		A9A155212994CFDF00AE9F4C /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A1551F2994CFDF00AE9F4C /* HomePage.swift */; };
+		A9A155222994CFDF00AE9F4C /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A155202994CFDF00AE9F4C /* LoginPage.swift */; };
+		A9A155252994D1A300AE9F4C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A155232994D1A300AE9F4C /* HomeView.swift */; };
+		A9A155262994D1A300AE9F4C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A155242994D1A300AE9F4C /* LoginView.swift */; };
+		A9A155282994D27700AE9F4C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A155272994D27700AE9F4C /* LoginViewModel.swift */; };
+		A9A1552B2994D28500AE9F4C /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A1552A2994D28500AE9F4C /* LoginViewModelTest.swift */; };
+		A9A1552D2994D3F100AE9F4C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A1552C2994D3F100AE9F4C /* AuthService.swift */; };
+		A9A155302994D4F700AE9F4C /* StubAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A1552F2994D4F700AE9F4C /* StubAuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +88,14 @@
 		A9677656299204130025D0C3 /* GreetMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9677668299204660025D0C3 /* GreetMeFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GreetMeFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A967766A299204670025D0C3 /* GreetMeFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreetMeFramework.h; sourceTree = "<group>"; };
+		A9A1551F2994CFDF00AE9F4C /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		A9A155202994CFDF00AE9F4C /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		A9A155232994D1A300AE9F4C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A9A155242994D1A300AE9F4C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A9A155272994D27700AE9F4C /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A9A1552A2994D28500AE9F4C /* LoginViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
+		A9A1552C2994D3F100AE9F4C /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A9A1552F2994D4F700AE9F4C /* StubAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubAuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +158,7 @@
 		A9677638299204110025D0C3 /* GreetMe */ = {
 			isa = PBXGroup;
 			children = (
+				A9A1552E2994D4F700AE9F4C /* Stub Services */,
 				A9677639299204110025D0C3 /* GreetMeApp.swift */,
 				A967763D299204130025D0C3 /* Assets.xcassets */,
 				A967763F299204130025D0C3 /* Preview Content */,
@@ -160,6 +177,7 @@
 		A9677649299204130025D0C3 /* GreetMeTests */ = {
 			isa = PBXGroup;
 			children = (
+				A9A155292994D28500AE9F4C /* View Model Tests */,
 				A967764A299204130025D0C3 /* GreetMeTests.swift */,
 			);
 			path = GreetMeTests;
@@ -168,6 +186,7 @@
 		A9677653299204130025D0C3 /* GreetMeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A9A1551E2994CFDF00AE9F4C /* Page Objects */,
 				A9677654299204130025D0C3 /* GreetMeUITests.swift */,
 				A9677656299204130025D0C3 /* GreetMeUITestsLaunchTests.swift */,
 			);
@@ -189,6 +208,7 @@
 		A9677674299204840025D0C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A9A1552C2994D3F100AE9F4C /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +223,7 @@
 		A9677676299204970025D0C3 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9A155272994D27700AE9F4C /* LoginViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -210,9 +231,36 @@
 		A9677677299204A00025D0C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A9A155232994D1A300AE9F4C /* HomeView.swift */,
+				A9A155242994D1A300AE9F4C /* LoginView.swift */,
 				A967763B299204110025D0C3 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A9A1551E2994CFDF00AE9F4C /* Page Objects */ = {
+			isa = PBXGroup;
+			children = (
+				A9A1551F2994CFDF00AE9F4C /* HomePage.swift */,
+				A9A155202994CFDF00AE9F4C /* LoginPage.swift */,
+			);
+			path = "Page Objects";
+			sourceTree = "<group>";
+		};
+		A9A155292994D28500AE9F4C /* View Model Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A9A1552A2994D28500AE9F4C /* LoginViewModelTest.swift */,
+			);
+			path = "View Model Tests";
+			sourceTree = "<group>";
+		};
+		A9A1552E2994D4F700AE9F4C /* Stub Services */ = {
+			isa = PBXGroup;
+			children = (
+				A9A1552F2994D4F700AE9F4C /* StubAuthService.swift */,
+			);
+			path = "Stub Services";
 			sourceTree = "<group>";
 		};
 		E6C22A7B8EA48C672192FE18 /* Generated Mocks */ = {
@@ -423,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A967763A299204110025D0C3 /* GreetMeApp.swift in Sources */,
+				A9A155302994D4F700AE9F4C /* StubAuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A967764B299204130025D0C3 /* GreetMeTests.swift in Sources */,
+				A9A1552B2994D28500AE9F4C /* LoginViewModelTest.swift in Sources */,
 				3C3E2CDABA44CFCBB6A6FA3C /* GreetMeTests-GreetMeFrameworkMocks.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,7 +489,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A155222994CFDF00AE9F4C /* LoginPage.swift in Sources */,
 				A9677657299204130025D0C3 /* GreetMeUITestsLaunchTests.swift in Sources */,
+				A9A155212994CFDF00AE9F4C /* HomePage.swift in Sources */,
 				A9677655299204130025D0C3 /* GreetMeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,7 +500,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A155282994D27700AE9F4C /* LoginViewModel.swift in Sources */,
+				A9A155262994D1A300AE9F4C /* LoginView.swift in Sources */,
+				A9A1552D2994D3F100AE9F4C /* AuthService.swift in Sources */,
 				A9677678299205050025D0C3 /* ContentView.swift in Sources */,
+				A9A155252994D1A300AE9F4C /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

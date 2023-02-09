@@ -10,6 +10,9 @@ import GreetMeFramework
 
 class StubAuthService: AuthService {
     func login(userName: String, password: String) throws {
-        
+        if userName == "43906621" && password == "Password" {
+        } else {
+            throw(AuthError.notAuthenticated)
+        }
     }
 }

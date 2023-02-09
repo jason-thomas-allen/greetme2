@@ -14,4 +14,8 @@ class HomePage {
     init(app: XCUIApplication) {
         self.app = app
     }
+    
+    var title: XCUIElement {
+            app.staticTexts["Home"]
+        }
 }
