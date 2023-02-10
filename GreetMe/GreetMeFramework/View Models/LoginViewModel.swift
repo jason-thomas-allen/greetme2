@@ -11,6 +11,7 @@ enum LoginStatus {
     case none
     case authenticated
     case denied
+    case validationFailed
 }
 
 public class LoginViewModel: ObservableObject {
@@ -26,6 +27,12 @@ public class LoginViewModel: ObservableObject {
     
     
     func login() {
+        
+        if userName.isEmpty || password.isEmpty {
+            self.loginStatus = .validationFailed
+            return
+        }
+        
         do {
             try service.login(userName: userName, password: password)
             self.loginStatus = .authenticated

@@ -17,11 +17,13 @@ public struct LoginView: View {
         switch loginVM.loginStatus {
         case .denied:
             return "Invalid credentials"
+        case .validationFailed:
+            return "Required fields are missing"
         default:
             return ""
         }
     }
-
+    
     
     public var body: some View {
         NavigationView {
@@ -65,6 +67,6 @@ public struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView().environmentObject(LoginViewModel(service: WebAuthService()))
     }
 }
